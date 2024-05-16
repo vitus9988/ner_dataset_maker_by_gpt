@@ -1,10 +1,22 @@
-# ner_dataset_maker_by_gpt
+# NER Dataset Maker by GPT
 
+한국어 NER 모델 파인튜닝을 위한 데이터셋 구축 저장소입니다.
 
-한국어 ner 모델 파인튜닝을 위해 gpt-4o api를 통한 데이터셋 구축에 관한 저장소입니다.
+이 저장소는 [데이터 없이 NER 모델 학습하기](https://medium.com/@yongsun.yoon/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%97%86%EC%9D%B4-ner-%EB%AA%A8%EB%8D%B8-%ED%95%99%EC%8A%B5%ED%95%98%EA%B8%B0-90c4c24953a)의 개념을 기반으로 하고 있으며, API 호출 파트 및 일부 소스코드의 수정을 진행했습니다.
 
-소스코드 및 개념은 전적으로 [데이터 없이 NER 모델 학습하기](https://medium.com/@yongsun.yoon/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%97%86%EC%9D%B4-ner-%EB%AA%A8%EB%8D%B8-%ED%95%99%EC%8A%B5%ED%95%98%EA%B8%B0-90c4c24953a)의 내용을 바탕으로 하고 있으며 본 저장소에서는 api 호출파트 및 자잘한 소스코드의 수정만 진행하였습니다.
+## 주요 구성 요소
 
-업로드 된 train.py에서는 gpt api를 통해 생성된 데이터셋을 바탕으로 [klue/roberta-small](https://huggingface.co/klue/roberta-small) 모델을 파인튜닝 하였습니다.
+### `create_dataset.py`
 
-파인튜닝 결과는 다음 [허깅페이스 링크](https://huggingface.co/vitus9988/klue_roberta_small_ner_custom_domain)와 같습니다.
+- `dataset_ko.json`에 명시된 엔티티 항목을 로드합니다.
+- 이를 바탕으로 GPT API를 통해 짧은 한국어 문장을 생성합니다.
+- 생성된 데이터를 CSV 파일로 저장합니다.
+
+### `train.py`
+
+- `create_dataset.py`의 실행 결과인 데이터셋 CSV 파일을 로드합니다.
+- [klue/roberta-small](https://huggingface.co/klue/roberta-small) 모델을 파인튜닝합니다.
+
+## 파인튜닝 결과
+
+파인튜닝 결과는 다음 [허깅페이스 링크](https://huggingface.co/vitus9988/klue_roberta_small_ner_custom_domain)에서 확인할 수 있습니다.
