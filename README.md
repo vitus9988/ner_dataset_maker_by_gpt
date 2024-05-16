@@ -1,4 +1,4 @@
-# NER Dataset Maker by GPT
+# NER Dataset Maker by GPT-4o
 
 한국어 NER 모델 파인튜닝을 위한 데이터셋 구축 저장소입니다.
 
