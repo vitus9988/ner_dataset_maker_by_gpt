@@ -15,7 +15,7 @@
 ### `train.py`
 
 - `create_dataset.py`의 실행 결과인 데이터셋 CSV 파일을 로드합니다.
-- [klue/roberta-small](https://huggingface.co/klue/roberta-small) 모델을 파인튜닝합니다.
+- 본 예제 코드에서는 [klue/roberta-small](https://huggingface.co/klue/roberta-small) 모델을 파인튜닝합니다.
 
 ## 파인튜닝 결과
 
