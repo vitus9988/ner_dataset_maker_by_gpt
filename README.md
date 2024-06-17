@@ -16,7 +16,3 @@
 
 - `create_dataset.py`의 실행 결과인 데이터셋 CSV 파일을 로드합니다.
 - 본 예제 코드에서는 [klue/roberta-small](https://huggingface.co/klue/roberta-small) 모델을 파인튜닝합니다.
-
-## 파인튜닝 결과
-
-파인튜닝 결과는 다음 [허깅페이스 링크](https://huggingface.co/vitus9988/klue_roberta_small_ner_custom_domain)에서 확인할 수 있습니다.
